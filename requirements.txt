@@ -1,2 +1,2 @@
 numpy
-matrixlib @ git+ssh://git@github.com/Kawenka/matrixlib.git
+matrixlib @ git+https://github.com/Kawenka/matrixlib.git
