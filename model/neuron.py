@@ -26,3 +26,19 @@ class Neuron:
         Z = (X * self.W) + self.bias
         activation = Z.map(self.sigmoid)
         return activation
+    
+    def compute_loss(self, y_true: Matrix, y_pred: Matrix) -> float:
+        num_samples = y_true.rows
+        epsilon = 1e-15
+        loss_sum = 0.0
+
+        for i in range (num_samples):
+            y = y_true[i, 0]
+            pred = y_pred[i, 0]
+            
+            pred = max(epsilon, min(1,0 - epsilon, pred));
+
+            sample_loss = (y * math.log(pred)) + ((1.0 - y) * math.log(1.0 - pred))
+            loss_sum += sample_loss
+        return -(loss_sum / num_samples)
+
