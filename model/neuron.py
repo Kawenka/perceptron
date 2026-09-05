@@ -46,8 +46,7 @@ class Neuron:
         for i in range (num_samples):
             y = y_true[i, 0]
             pred = y_pred[i, 0]
-            
-            pred = max(epsilon, min(1,0 - epsilon, pred));
+            pred = max(epsilon, min(1.0 - epsilon, pred))
 
             sample_loss = (y * math.log(pred)) + ((1.0 - y) * math.log(1.0 - pred))
             loss_sum += sample_loss

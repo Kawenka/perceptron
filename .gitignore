@@ -1,3 +1,16 @@
+# Python virtual environment
 .venv/
+venv/
+ENV/
+
+# Python cache and byte-compiled files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Sensitive candidate / production datasets
+data/data.csv
+
+# Compiled C++ extension modules and build artifacts
+build/
+*.so
